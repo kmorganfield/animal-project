@@ -57,8 +57,9 @@ function playSound() {
 //give each animal an id
 
 //onclick, set value of animal's clicked function to true (define a variable to identify it as the one clicked?)
-//var randomId = document.getElementbyId("")
-//if (randomAnimal == box.clicked)
+//var randomId = document.getElementbyId("randomAnimal")
+//if (randomAnimal == randomId)
+//
 
 //if correct animal==animal clicked, then make a "correct" sound, else make an "incorrect" sound
 //if correct animal==animal clicked, then add 1 to score counter
