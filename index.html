@@ -14,15 +14,18 @@
     <a-scene rain>
         <a-assets>
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+            <a-asset-item id="roboto" src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
             <img id="rainforest" src="images/rainforest.jpg">
-            <img id="monkey" src="images/monkey.jpg">
-            <img id="toucan" src="images/toucan.jpg">
-            <img id="frog" src="images/frog.jpg">
-            <img id="jaguar" src="images/jaguar.jpg">
+            <img id="monkeyPic" src="images/monkey.jpg">
+            <img id="toucanPic" src="images/toucan.jpg">
+            <img id="frogPic" src="images/frog.jpg">
+            <img id="jaguarPic" src="images/jaguar.jpg">
             <a-asset-item id="tree-obj" src="images/tree.obj"></a-asset-item>
             <a-asset-item id="tree-mtl" src="images/tree.mtl"></a-asset-item>
-            <audio id = "frogSound1" src="sounds/froggy.mp3"></audio>
-            <audio id = "monkeySound1" src="sounds/monkey-noises.mp3"></audio>
+            <audio id="frogSound1" src="sounds/froggy.mp3"></audio>
+            <audio id="monkeySound1" src="sounds/monkey-noises.mp3"></audio>
+            <audio id="jaguarSound1" src="sounds/jaguar-noises.mp3"></audio>
+            <audio id="toucanSound1" src="sounds/toucan-noises.wav"></audio>
 
         </a-assets>
 
@@ -31,32 +34,42 @@
                 <a-cursor></a-cursor>
             </a-camera>
         </a-entity>
-        
-        <a-entity id = "frogSound" sound="src: #frogSound1"></a-entity>
+
+        <a-entity id="frogSound" sound="src: #frogSound1"></a-entity>
         <a-entity id="monkeySound" sound="src: #monkeySound1"></a-entity>
+        <a-entity id="jaguarSound" sound="src: #jaguarSound1"></a-entity>
+        <a-entity id="toucanSound" sound="src: #toucanSound1"></a-entity>
 
         <!--<a-entity id = "display" text-geometry="value: Dog?; font: #optimerBoldFont" position = "-1 4 -3"></a-entity>-->
         <a-sound src="src: url(sounds/rain.mp3)" autoplay="true" position="0 2 5" loop="true"></a-sound>
-        
-         <a-sphere onclick="animalGuess()" color="white" position="0 3.5 -5" radius="1"></a-sphere>
 
-       <a-text visible=false id="display" value="Look for a _____" color="red" position="-1 4 -3"></a-text>
-        
-        <a-box id="monkey" material="src:#monkey" sound="src: url(sounds/monkey-noises.mp3); on: click" position="-8 7 -14" depth="4" height="4" width="4">
+        <a-sphere onclick="beginGame()" color="black" position="0 0 -5" radius="0.5"></a-sphere>
+
+        <a-sphere onclick="animalGuess()" color="white" position="0 3.5 -5" radius="1"></a-sphere>
+
+        <a-entity visible=false id="display" text-geometry="value: Look for a _____; font: #roboto" color="white" position="-1 4 -3"></a-entity>
+        <!--<a-text visible=false id="display" value="Look for a _____" color="white" font="src:#roboto" position="-1 4 -3"></a-text>-->
+
+        <a-box id="monkey" visible="true" onclick="correctAnimal('monkey')" visible=true material="src:#monkeyPic" sound="src: url(sounds/monkey-noises.mp3); on: click" position="-6.5 18 -14" depth="4" height="4" width="4">
             <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+            <a-animation attribute="position" from="-6.5 18 -14" direction="alternate" to="-6.5 19 -14" dur="10000" repeat="indefinite"></a-animation>
         </a-box>
 
-        <a-box id="frog" material="src:#frog" sound="src: url(sounds/froggy.mp3); on: click" position="7 4 -10" depth="4" height="4" width="4">
+        <a-box id="frog" onclick="correctAnimal('frog')" material="src:#frogPic" sound="src: url(sounds/froggy.mp3); on: click" position="7 4 -10" depth="4" height="4" width="4">
             <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+            <a-animation attribute="position" from="7 4 -10" direction="alternate" to="7 3 -10" dur="10000" repeat="indefinite"></a-animation>
         </a-box>
 
-        <a-box id="toucan" material="src:#toucan"  position="2 12 -5" depth="3" height="3" width="3">
+        <a-box id="toucan" onclick="correctAnimal('toucan')" material="src:#toucanPic" sound="src: url(sounds/toucan-noises.wav); on: click; volume: 2" position="4 25 -2" depth="3" height="3" width="3">
             <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+            <a-animation attribute="position" from="4 25 -2" direction="alternate" to="4 24 -2" dur="10000" repeat="indefinite"></a-animation>
         </a-box>
 
-        <a-box id="jaguar" material="src:#jaguar" position="-2 1 -7" depth=" 3 " height="2 " width="4 " rotation="0 0 40">
+        <a-box id="jaguar" onclick="correctAnimal('jaguar')" material="src:#jaguarPic" sound="src: url(sounds/jaguar-noises.mp3); on: click; volume: 2" position="-2 1 -7" depth=" 3 " height="2 " width="4 " rotation="0 0 40">
             <a-animation begin="click " attribute="rotation" from="0 0 0 " to="0 360 0 " dur="1000 "></a-animation>
+            <a-animation attribute="position" from="-2 1 -7" direction="alternate" to="-2 0 -7" dur="10000" repeat="indefinite"></a-animation>
         </a-box>
+        <a-text visible=false id="correct" value="You are correct!" color="red" position="-1 5.5 -4"></a-text>
 
         <a-sky material="src:#rainforest "></a-sky>
 
