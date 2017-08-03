@@ -25,10 +25,16 @@ function beginGame() {
     else if (sceneNum == 1) {
         animals = ["cow", "chicken", "pig", "sheep"]
         noises = ["cowSound", "chickenSound", "pigSound", "sheepSound"]
-    } else {
+    }
+    else if (sceneNum == 2) {
         animals = ["whale", "dolphin", "seal", "penguin"]
         noises = ["whaleSound", "dolphinSound", "sealSound", "penguinSound"]
     }
+    else {
+
+    }
+    console.log(animals)
+    console.log(noises)
     used = ["0", "0", "0", "0"]
 }
 
@@ -62,7 +68,47 @@ function displayAnimal() {
 
 }
 
+function info(animalID) {
+    if (animalID == "jaguar") {
+        var text = document.getElementById("animalText")
+        text.setAttribute("visible", "true");
+        text.setAttribute("value", "Jaguars unexpectedly live in the rainforest. They have incredibly powerful jaws, strong enough to pierce a skull and crack a sea turtle’s shell. They are fearsome predators and will hunt anything from frogs, fish and reptiles to livestock, cows and deer. If necessary jaguars are competent climbers and will scale trees. They often use their high position among the branches to pounce on unsuspecting prey below. (nationalgeographic.com)")
+    }
+    else if (animalID == "frog") {
+        var text = document.getElementById("animalText")
+        text.setAttribute("visible", "true");
+        text.setAttribute("value", "Red eyed tree frogs seem like they wouldn't survive well in the wild due to their color. However, they tuck their legs in close to its body and close their eyes to hide. When they sense a predator, they open their eyes and jump away, exposing their bright colors. At night, when they are less at risk of becoming a meal, the frogs are much more active. They spend time hunting for insects. One cool fact is that they use their eyes to help them swallow. They retract their eyes into their body to push the meal down their throats. (mentalfloss.com)")
+
+    }
+    else if (animalID == "monkey") {
+        var text = document.getElementById("animalText")
+        text.setAttribute("visible", "true");
+        text.setAttribute("value", "Spider monkeys live in wet and dense tropical rainforests. Unfortunately, the number of spider monkeys is constantly decreasing because of the habitat loss, intense deforestation, hunt (indigenous people eat the meat of spider monkeys), and pet trade. They are listed as critically, endangered animals. One cool fact is that spider monkeys are named that way because they hang from the trees by holding different branches with their limbs and long tails, shaped like spiders. (softschools.com)")
+    }
+    else if (animalID == "toucan") {
+        var text = document.getElementById("animalText")
+        text.setAttribute("visible", "true");
+        text.setAttribute("value", "Toucan’s most recognizable trait is their beak made of protein keratin that has many air pockets allowing for a very low mass. Their beak allows them to peel fruit—their main source of food. Toucans are not very good at flying, so they get around by hopping. They nest in the hollows of trees. (animalfactguide.com)")
+    }
+    else if (animalID == "chicken") {
+        var text = document.getElementById("animalText")
+        text.setAttribute("visible", "true");
+        text.setAttribute("value", "People have been raising chickens for more than 7,000 years. Chickens were first domesticated in Indian and China. You might think of chickens as farm animals, but even people in cities can raise a few chickens in the backyard. Chicken coops don’t take up much room.Chickens are raised mostly for their eggs and meat, but chickens also make good pets. Some chickens are very tame and will allow you to hold or pet them. Chickens eat almost anything – grass, bugs, fruit, vegetables and table scraps. If you don’t clean your plate, your chickens will!(easyscienceforkids.com)")
+    }
+    else if (animalID == "cow") {
+
+    }
+    else if (animalID == "sheep") {
+
+    }
+    else if (animalID == "pig") {
+
+    }
+
+}
+
 function correctAnimal(animalID) {
+    info(animalID);
     console.log(randomAnimal)
     if (randomAnimal != null) {
         // var randomId = document.getElementbyId("monkey")
@@ -81,7 +127,8 @@ function correctAnimal(animalID) {
             //makes the randomId animal dissapear
             ani.setAttribute("visible", "false")
             console.log("helllooooo")
-        } else {
+        }
+        else {
             moveOn = false;
             var text2 = document.getElementById("correct")
             //changes the a-text to be visible, but changes to text to indicate that the user was not correct
@@ -131,9 +178,20 @@ function playSound() {
 }
 
 function changeScene(oldScene, newScene, box1, box2, box3, box4, oldSceneSound, newSceneSound) {
-    sceneNum = sceneNum+1;
+    if (oldScene == "rainforest-scene") {
+        sceneNum = 1;
+    }
+    else if (oldScene == "farm-scene") {
+        sceneNum = 2;
+    }
+    else if (oldScene == "ocean-scene") {
+        sceneNum = 3;
+    }
     beginGame();
-    
+
+    var scene = document.querySelector('a-scene');
+    scene.removeAttribute("rain")
+
     var oldScene = document.getElementById(oldScene);
     var newScene = document.getElementById(newScene);
     oldScene.setAttribute("visible", "false");
@@ -147,12 +205,14 @@ function changeScene(oldScene, newScene, box1, box2, box3, box4, oldSceneSound, 
     box2.setAttribute("position", "0 1000 0");
     box3.setAttribute("position", "0 1000 0");
     box4.setAttribute("position", "0 1000 0");
-    
+
     var oldSceneSound = document.getElementById(oldSceneSound);
     var newSceneSound = document.getElementById(newSceneSound);
-    oldSceneSound.setAttribute("autoplay", "false");
-    oldSceneSound.setAttribute("volume", "0");
-    newSceneSound.setAttribute("autoplay", "true");
+    oldSceneSound.components.sound.pauseSound();
+    newSceneSound.components.sound.playSound();
+    /*    oldSceneSound.setAttribute("autoplay", "false");
+        oldSceneSound.setAttribute("volume", "0");
+        newSceneSound.setAttribute("autoplay", "true");*/
 }
 
 //give each animal an id
