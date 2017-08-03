@@ -15,6 +15,7 @@
 
     <a-scene rain>
         <a-assets>
+            
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
             <a-asset-item id="roboto" src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
@@ -116,7 +117,7 @@
 
             <a-box id="jaguar" onclick="correctAnimal('jaguar')" material="src:#jaguarPic" sound="src: url(sounds/jaguar-noises.mp3); on: click" position="-2 1 -7" depth="3" height="2" width="4" rotation="0 0 40" volume="6">
                 <a-animation begin="click " attribute="rotation" from="0 0 0" to="0 360 40" dur="1000 "></a-animation>
-                <!--<a-animation attribute="position" from="-2 1 -7" direction="alternate" to="-2 0 -7" dur="10000" repeat="indefinite "></a-animation>-->
+                <!--<a-animation attribute="position" from="-2 1 -7" direction="alternate" to="-2 0 -7" dur="10000" repeat="indefinite"></a-animation>-->
             </a-box>
             <!--<a-plane position="0.6 4.9 -4 " width="3 " height="0.5 " color="white "> </a-plane>-->
 
@@ -173,24 +174,24 @@
             <a-sky material="src:#ocean"></a-sky>
             <a-sound id="ocean-noise" src="src: url(sounds/waves.mp3)" autoplay="false" position="0 2 5" loop="true" volume="0.5"></a-sound>
 
-            <a-box id="dolphin" visible=true onclick="correctAnimal('dolphin')" material="src:#dolphinPic" sound="src: url(sounds/dolphin-noises.mp3); on: click" position="-7 5 -14" depth="4" height="4" width="4">
+            <a-box id="dolphin" visible=true onclick="correctAnimal('dolphin')" material="src:#dolphinPic" sound="src: url(sounds/dolphin-noises.mp3); on: click" position="-7 5 -14" depth="4" height="4" width="4" rotation="20 0 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="-7 5 -14" direction="alternate" to="-6.5 5 -14" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="-7 12 -14" direction="alternate" to="-7.5 12 -14" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="penguin" visible=true onclick="correctAnimal('penguin')" material="src:#penguinPic" sound="src: url(sounds/penguin-noises.mp3); on: click" position="1 0 -10" depth="4" height="4" width="4">
+            <a-box id="penguin" visible=true onclick="correctAnimal('penguin')" material="src:#penguinPic" sound="src: url(sounds/penguin-noises.mp3); on: click" position="1 0 -10" depth="2.5" height="3" width="3" rotation="22 -25 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="1 0 -10" direction="alternate" to="1 1 -10" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="12 10 -10" direction="alternate" to="12 9 -10" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="seal" visible=true onclick="correctAnimal('seal')" material="src:#sealPic" sound="src: url(sounds/seal-noises.mp3); on: click;" position="4 0 -2" depth="3" height="3" width="3">
+            <a-box id="seal" visible=true onclick="correctAnimal('seal')" material="src:#sealPic" sound="src: url(sounds/seal-noises.mp3); on: click;" position="4 0 -2" depth="1.5" height="1.5" width="1.5">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
                 <a-animation attribute="position" from="4 0 -2" direction="alternate" to="4 1 -2" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="whale" visible=true onclick="correctAnimal('whale')" material="src:#whalePic" sound="src: url(sounds/whale.mp3); on: click; volume: 2" position="-2 2 -7" depth="2" height="2" width="3">
+            <a-box id="whale" visible=true onclick="correctAnimal('whale')" material="src:#whalePic" sound="src: url(sounds/whale.mp3); on: click; volume: 2" position="-2 2 7" depth="2" height="2" width="3" rotation ="20 0 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="-2 8 7" direction="alternate" to="-2 8 -7" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="2 8 -7" direction="alternate" to="2 8 -7" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
             <a-text visible=false id="correct" value="You are correct!" color="red" position="-1 5.5 -4"></a-text>

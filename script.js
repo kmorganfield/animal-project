@@ -143,10 +143,10 @@ function changeScene(oldScene, newScene, box1, box2, box3, box4, oldSceneSound, 
     var box2 = document.getElementById(box2);
     var box3 = document.getElementById(box3);
     var box4 = document.getElementById(box4);
-    box1.setAttribute("onclick", "");
-    box2.setAttribute("onclick", "");
-    box3.setAttribute("onclick", "");
-    box4.setAttribute("onclick", "");
+    box1.setAttribute("position", "0 1000 0");
+    box2.setAttribute("position", "0 1000 0");
+    box3.setAttribute("position", "0 1000 0");
+    box4.setAttribute("position", "0 1000 0");
     
     var oldSceneSound = document.getElementById(oldSceneSound);
     var newSceneSound = document.getElementById(newSceneSound);
