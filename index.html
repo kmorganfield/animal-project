@@ -15,7 +15,7 @@
 
     <a-scene rain>
         <a-assets>
-            
+
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
             <a-asset-item id="roboto" src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
 
@@ -59,7 +59,49 @@
             <a-entity text="font: exo2bold;"></a-entity>
             <a-entity text="https://cdn.aframe.io/fonts/Exo2Bold.fnt;"></a-entity>
 
+            <img id="chicago" src="classImages/chicago.jpg">
+            <img id="alexandra" src="classImages/alexandra.jpg">
+            <img id="alex" src="classImages/alex.jpg">
+            <img id="aliza" src="classImages/aliza.jpg">
+            <img id="amanda" src="classImages/amanda.jpg">
+            <img id="anabelle" src="classImages/anabelle.jpg">
+            <img id="anya" src="classImages/anya.jpg">
+            <img id="blossom" src="classImages/blossom.jpg">
+            <img id="carly" src="classImages/carly.jpg">
+            <img id="cj" src="classImages/cj.jpg">
+            <img id="dana" src="classImages/dana.jpg">
+            <img id="em" src="classImages/emma.jpg">
+            <img id="faith" src="classImages/faith.jpg">
+            <img id="elaine" src="classImages/elaine.jpg">
+            <img id="kaylin" src="classImages/kaylin.jpg">
+            <img id="kammy" src="classImages/kammy.jpg">
+            <img id="kennedy" src="classImages/kennedy.jpg">
+            <img id="marley" src="classImages/marley.jpg">
+            <img id="melanie" src="classImages/melanie.jpg">
+            <img id="priya" src="classImages/priya.jpg">
+
+            <audio id="alexSound" src="classSounds/alex.m4a"></audio>
+            <audio id="alexandraSound" src="classSounds/alexandra.m4a"></audio>
+            <audio id="alizaSound" src="classSounds/aliza.m4a"></audio>
+            <audio id="amandaSound" src="classSounds/amanda.m4a"></audio>
+            <audio id="annebelleSound" src="classSounds/annebelle.m4a"></audio>
+            <audio id="anyaSound" src="classSounds/anya.m4a"></audio>
+            <audio id="blossomSound" src="classSounds/blossom.m4a"></audio>
+            <audio id="carlySound" src="classSounds/carly.m4a"></audio>
+            <audio id="cjSound" src="classSounds/cj.m4a"></audio>
+            <audio id="danaSound" src="classSounds/dana.m4a"></audio>
+            <audio id="elaineSound" src="classSounds/elaine.m4a"></audio>
+            <audio id="emmaSound" src="classSounds/emma.m4a"></audio>
+            <audio id="faithSound" src="classSounds/faith.m4a"></audio>
+            <audio id="kammySound" src="classSounds/kammy.m4a"></audio>
+            <audio id="kaylinSound" src="classSounds/kaylin.m4a"></audio>
+            <audio id="kennedySound" src="classSounds/kennedy.m4a"></audio>
+            <audio id="marleySound" src="classSounds/marley.m4a"></audio>
+            <audio id="melanieSound" src="classSounds/melanie.m4a"></audio>
+            <audio id="priyaSound" src="classSounds/priya.m4a"></audio>
+            
         </a-assets>
+
 
         <a-entity>
             <a-camera>
@@ -123,14 +165,12 @@
 
             <a-text visible=false id="correct" value="You are correct!" color="red " position="-1 3 -2" font="exo2bold"></a-text>
 
-            <a-sphere onclick="changeScene('rainforest-scene', 'farm-scene', 'monkey', 'frog', 'toucan', 'jaguar', 'rainforest-noise', 'farm-noise')" color="pink" position="0 -2.5 -5" radius="1">
+            <a-sphere id="changer1" onclick="changeScene('rainforest-scene', 'farm-scene', 'monkey', 'frog', 'toucan', 'jaguar', 'rainforest-noise', 'farm-noise', 'changer1')" color="pink" position="0 -2.5 -5" radius="1">
                 <a-text color="black" value="Change Scene" position="-0.7 1 0.5"></a-text>
             </a-sphere>
-            <a-plane color="pink" position="-40 -4 -10" rotation="0 90 0" width="30" height="30" opacity= "0.5" >
-                <a-text id="animalText" visible=true position="0 -1 1" color="red" value="change"></a-text>
-<!--                <a-text id="toucanText" visible=false position="-40 -4 -10" color="red" value="change"></a-text>
-                <a-text id="frogText" visible=false position="-40 -4 -10" color="red" value="change"></a-text>
-                <a-text id="monkeyText" visible=false position="-40 -4 -10" color="red" value="change"></a-text>-->
+            <a-plane color="pink" position="-40 -4 -10" rotation="0 90 0" width="39" height="30" opacity="0.9">
+                <a-text id="animalText1" visible=true position="-17 -1 1" color="black" value="change" width="35"></a-text>
+
             </a-plane>
 
         </a-entity>
@@ -143,19 +183,19 @@
 
             <a-sky material="src:#farm"></a-sky>
 
-            <a-box id="cow" visible="true" onclick="correctAnimal('cow')" visible=true material="src:#cowPic" sound="src: url(sounds/cow-noises.wav); on: click; volume: 10;" position="-6.5 18 -14" depth="4" height="4" width="4">
+            <a-box id="cow" visible="true" onclick="correctAnimal('cow')" visible=true material="src:#cowPic" sound="src: url(sounds/cow-noises.wav); on: click; volume: 10;" position="-6.5 18 -15" depth="4" height="4" width="4">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="-6.5 3 -14" direction="alternate" to="-6.5 4.5 -14" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="-6.5 3 -15" direction="alternate" to="-6.5 4.5 -15" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="pig" onclick="correctAnimal('pig')" material="src:#pigPic" sound="src: url(sounds/pig-noises.mp3); on: click; volume: 10;" position="7 5 -12" depth="2" height="3" width="3" rotation="0 -20 0">
+            <a-box id="pig" onclick="correctAnimal('pig')" material="src:#pigPic" sound="src: url(sounds/pig-noises.mp3); on: click; volume: 10;" position="7 5 -15" depth="2" height="3" width="3" rotation="0 -20 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="7 5 -12" direction="alternate" to="7 5 -12" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="7 5 -15" direction="alternate" to="7 5 -15" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="sheep" onclick="correctAnimal('sheep')" material="src:#sheepPic" sound="src: url(sounds/sheep-noises.mp3); on: click; volume: 5" position="4 0 -10" depth="3" height="3" width="3" rotation="0 -20 0">
+            <a-box id="sheep" onclick="correctAnimal('sheep')" material="src:#sheepPic" sound="src: url(sounds/sheep-noises.mp3); on: click; volume: 5" position="7 0 -15" depth="3" height="3" width="3" rotation="0 -20 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000 "></a-animation>
-                <a-animation attribute="position" from="4 -2 -10" direction="alternate" to="4 -1 -10" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="7 -2 -15" direction="alternate" to="7 -1 -15" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
             <a-box id="chicken" onclick="correctAnimal('chicken')" material="src:#chickenPic" sound="src: url(sounds/chicken-noises.mp3); on: click; volume: 7" position="-4.5 -2 -7" depth=" 3 " height="2 " width="2">
@@ -165,10 +205,13 @@
 
             <a-text visible=false id="correct" value="You are correct!" color="red" position="-1 5.5 -4"></a-text>
 
-            <a-sphere onclick="changeScene('farm-scene', 'ocean-scene', 'cow', 'pig', 'sheep', 'chicken', 'farm-noise', 'ocean-noise')" color="pink" position="0 -3.5 -5" radius="1">
+            <a-sphere id="changer2" onclick="changeScene('farm-scene', 'ocean-scene', 'cow', 'pig', 'sheep', 'chicken', 'farm-noise', 'ocean-noise', 'changer2')" color="pink" position="0 -3.5 -5" radius="1">
                 <a-text color="black" value="Change Scene" position="-0.7 1 0.5"></a-text>
             </a-sphere>
+            <a-plane color="pink" position="-40 -4 -10" rotation="0 90 0" width="39" height="30" opacity="0.9">
+                <a-text id="animalText2" visible=true position="-17 -1 1" color="black" value="change" width="35"></a-text>
 
+            </a-plane>
         </a-entity>
 
 
@@ -180,14 +223,14 @@
             <a-sky material="src:#ocean"></a-sky>
             <a-sound id="ocean-noise" src="src: url(sounds/waves.mp3)" autoplay="false" position="0 2 5" loop="true" volume="0.5"></a-sound>
 
-            <a-box id="dolphin" visible=true onclick="correctAnimal('dolphin')" material="src:#dolphinPic" sound="src: url(sounds/dolphin-noises.mp3); on: click" position="-7 5 -14" depth="3" height="5" width="6" rotation="20 0 0">
+            <a-box id="dolphin" visible=true onclick="correctAnimal('dolphin')" material="src:#dolphinPic" sound="src: url(sounds/dolphin-noises.mp3); on: click" position="-7 5 -18" depth="3" height="5" width="6" rotation="20 0 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="-7 12 -14" direction="alternate" to="-7.5 12 -14" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="-7 12 -18" direction="alternate" to="-7.5 12 -18" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="penguin" visible=true onclick="correctAnimal('penguin')" material="src:#penguinPic" sound="src: url(sounds/penguin-noises.mp3); on: click;volume: 5;" position="1 0 -10" depth="2.5" height="3" width="3" rotation="22 -25 0">
+            <a-box id="penguin" visible=true onclick="correctAnimal('penguin')" material="src:#penguinPic" sound="src: url(sounds/penguin-noises.mp3); on: click;volume: 5;" position="1 0 -16" depth="2.5" height="3" width="3" rotation="22 -25 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="12 10 -10" direction="alternate" to="12 9 -10" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="12 10 -16" direction="alternate" to="12 9 -16" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
             <a-box id="seal" visible=true onclick="correctAnimal('seal')" material="src:#sealPic" sound="src: url(sounds/seal-noises.mp3); on: click;volume: 5;" position="4 0 -2" depth="1.5" height="1.5" width="1.5">
@@ -195,14 +238,107 @@
                 <a-animation attribute="position" from="4 0 -2" direction="alternate" to="4 1 -2" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
 
-            <a-box id="whale" visible=true onclick="correctAnimal('whale')" material="src:#whalePic" sound="src: url(sounds/whale.mp3); on: click; volume: 5" position="-2 2 7" depth="2" height="2" width="3" rotation ="20 0 0">
+            <a-box id="whale" visible=true onclick="correctAnimal('whale')" material="src:#whalePic" sound="src: url(sounds/whale.mp3); on: click; volume: 5" depth="2" height="2" width="3" rotation="20 0 0">
                 <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
-                <a-animation attribute="position" from="3 1 -7" direction="alternate" to="3 -1 -7" dur="10000" repeat="indefinite"></a-animation>
+                <a-animation attribute="position" from="6 1 -7" direction="alternate" to="6 -1 -7" dur="10000" repeat="indefinite"></a-animation>
             </a-box>
+            <a-plane color="pink" position="-40 -4 -10" rotation="0 90 0" width="39" height="30" opacity="0.9">
+                <a-text id="animalText3" visible=true position="-17 -1 1" color="black" value="change" width="35"></a-text>
+            </a-plane>
 
             <a-text visible=false id="correct" value="You are correct!" color="red" position="-1 5.5 -4"></a-text>
+            
+            <a-sphere id="changer3" onclick="changeScene('ocean-scene', 'classroom-scene', 'dolphin', 'penguin', 'seal', 'whale', 'ocean-noise', 'chicago-noise', 'changer3')" color="pink" position="0 -3.5 -5" radius="1">
+                <a-text color="black" value="Change Scene" position="-0.7 1 0.5"></a-text>
+            </a-sphere>
+
 
         </a-entity>
+        <!--KWK Classroom-->
+        <a-entity id="classroom-scene" visible=false>
+            
+            <a-sky material="src:#chicago"></a-sky>
+            <a-sound id="chicago-noise" src="src: url(sounds/chicago.wav)" autoplay="false" position="0 2 5" loop="true" volume="0.5"></a-sound>
+
+            <a-box id="alex" visible=true onclick="" material="src:#alexandra" sound="src: url(classSounds/alex.m4a); on: click" position="-7 5 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-7 12 -14" direction="alternate" to="-7.5 12 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+
+            <a-box id="alexandra" visible=true onclick="" material="src:#alex" sound="src: url(classSounds/alexandra.m4a); on: click" position="-5 10 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-5 10 -14" direction="alternate" to="-6 10 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="aliza" visible=true onclick="" material="src:#aliza" sound="src: url(classSounds/aliza.m4a); on: click" position="-3 8 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-3 8 -14" direction="alternate" to="-4 8 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="amanda" visible=true onclick="" material="src:#amanda" sound="src: url(classSounds/amanda.m4a); on: click" position="-3 5 -10" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-3 5 -10" direction="alternate" to="-2 5 -10" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="anabelle" visible=true onclick="" material="src:#anabelle" sound="src: url(classSounds/anabelle.m4a); on: click" position="2 5 -10" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="2 5 -10" direction="alternate" to="3 5 -10" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="anya" visible=true onclick="" material="src:#anya" sound="src: url(classSounds/anya.m4a); on: click" position="-1 4 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-1 4 -14" direction="alternate" to="0 4 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="blossom" visible=true onclick="" material="src:#blossom" sound="src: url(classSounds/blossom.m4a); on: click" position="3 3 -10" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="3 3 -10" direction="alternate" to="4 3 -10" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="carly" visible=true onclick="" material="src:#carly" sound="src: url(classSounds/carly.m4a); on: click" position="0 5 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="0 5 -14" direction="alternate" to="1 5 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="cj" visible=true onclick="" material="src:#cj" sound="src: url(classSounds/cj.m4a); on: click" position="-1 5 -8" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-1 5 -8" direction="alternate" to="0 5 -8" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="dana" visible=true onclick="" material="src:#dana" sound="src: url(classSounds/dana.m4a); on: click" position="4 -2 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="4 -2 -14" direction="alternate" to="3 -2 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="elaine" visible=true onclick="" material="src:#elaine" sound="src: url(classSounds/elaine.m4a); on: click" position="2 1 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="2 1 -14" direction="alternate" to="1 1 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="emma" visible=true onclick="" material="src:#emma" sound="src: url(classSounds/emma.m4a); on: click" position="2 5 -9" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="2 5 -9" direction="alternate" to="3 5 -9" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="faith" visible=true onclick="" material="src:#faith" sound="src: url(classSounds/faith.m4a); on: click" position="1 -3 -8" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="1 -3 -8" direction="alternate" to="0 -3 -8" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="kaylin" visible=true onclick="" material="src:#kaylin" sound="src: url(classSounds/kaylin.m4a); on: click" position="3 4 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="3 4 -14" direction="alternate" to="4 4 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="kammy" visible=true onclick="" material="src:#kammy" sound="src: url(classSounds/kammy.m4a); on: click" position="-1 -3 -10" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="-1 -3 -10" direction="alternate" to="0 -3 -10" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="kennedy" visible=true onclick="" material="src:#kennedy" sound="src: url(classSounds/kennedy.m4a); on: click" position="0 9 -10" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="0 9 -10" direction="alternate" to="1 9 -10" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="marley" visible=true onclick="" material="src:#marley" sound="src: url(classSounds/marley.m4a); on: click" position="6 1 -6" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="6 1 -6" direction="alternate" to="7 1 -6" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="melanie" visible=true onclick="" material="src:#melanie" sound="src: url(classSounds/melanie.m4a); on: click" position="5 10 -14" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="5 10 -14" direction="alternate" to="6 10 -14" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+            <a-box id="priya" visible=true onclick="" material="src:#priya" sound="src: url(classSounds/priya.m4a); on: click" position="5 8 -7" depth="3" height="3" width="3" rotation="0 0 0">
+                <a-animation begin="click" attribute="rotation" from="0 0 0" to="0 360 0" dur="1000"></a-animation>
+                <a-animation attribute="position" from="5 8 -7" direction="alternate" to="6 8 -7" dur="10000" repeat="indefinite"></a-animation>
+            </a-box>
+        </a-entity>
+
 
 
     </a-scene>
