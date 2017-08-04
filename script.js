@@ -31,17 +31,20 @@ function beginGame() {
         noises = ["whaleSound", "dolphinSound", "sealSound", "penguinSound"]
     }
     else {
-        animals = ["Emma", "Kennedy", "Faith", "Dana", "Taylor", "Melanie", "Alex", "Marley", "Anya", "Kaylin", "Rachael", "Kammy", "Annebelle", "CJ", 
-        "Alexandra", "Amanda", "Blossom", "Carly", "Elaine", "Zahwa", "Aliza", "Priya"]
-        noises = ["emmaSound", "kennedySound", "faithSound", "danaSound", "taylorSound", "melanieSound", "alexSound", "marleySound", "anyaSound", 
-        "kaylinSound", "rachaelSound", "kammySound", "annebelleSound", "cjSound", "alexandraSound", "amandaSound", "blossomSound", "carlySound",
-        "elaineSound", "zahwaSound", "alizaSound", "priyaSound"]
+        animals = ["Emma", "Kennedy", "Faith", "Dana", "Taylor", "Melanie", "Alex", "Marley", "Anya", "Kaylin", "Rachael", "Kammy", "Annebelle", "CJ",
+            "Alexandra", "Amanda", "Blossom", "Carly", "Elaine", "Zahwa", "Aliza", "Priya"
+        ]
+        noises = ["emmaSound", "kennedySound", "faithSound", "danaSound", "taylorSound", "melanieSound", "alexSound", "marleySound", "anyaSound",
+            "kaylinSound", "rachaelSound", "kammySound", "annebelleSound", "cjSound", "alexandraSound", "amandaSound", "blossomSound", "carlySound",
+            "elaineSound", "zahwaSound", "alizaSound", "priyaSound"
+        ]
     }
     console.log(animals)
     console.log(noises)
     if (sceneNum == 3) {
-        used = ["0", "0", "0","0", "0", "0","0", "0", "0","0", "0", "0","0", "0", "0","0", "0", "0","0", "0", "0","0"]
-    } else {
+        used = ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+    }
+    else {
         used = ["0", "0", "0", "0"]
     }
 }
@@ -56,10 +59,13 @@ function displayAnimal() {
     if (moveOn == true) {
         moveOn = false;
         //removes "correct/incorrect" text from previous animal when sphere is clicked
-        var text2 = document.getElementById("correct")
+        var helper = sceneNum + 1;
+        var textID = "correct" + (sceneNum + 1)
+        var text2 = document.getElementById(textID)
         text2.setAttribute("visible", "false")
 
-        var text = document.getElementById("display")
+        var displayID = "display" + helper;
+        var text = document.getElementById(displayID)
         var index = Math.floor(Math.random() * 4);
         while (used[index] != 0 && allUsed() == false) {
             index = Math.floor(Math.random() * 4);
@@ -77,8 +83,8 @@ function displayAnimal() {
 }
 
 function info(animalID) {
-    var helper = sceneNum+1;
-    var textID = "animalText" + (sceneNum +1)
+    var helper = sceneNum + 1;
+    var textID = "animalText" + (sceneNum + 1)
     console.log(textID)
     if (animalID == "jaguar") {
         var text = document.getElementById(textID)
@@ -154,8 +160,9 @@ function correctAnimal(animalID) {
         console.log(animalID)
         if (randomAnimal == animalID) {
             moveOn = true;
-            var text2 = document.getElementById("correct")
-            //changes the a-text w/ an id of correct to be visible and changes text to indicate the user was not correct
+            var helper = sceneNum + 1;
+            var textID = "correct" + (sceneNum + 1)
+            var text2 = document.getElementById(textID)
             text2.setAttribute("visible", "true")
             text2.setAttribute("value", "You have selected the correct animal!")
             var yay = document.getElementById("yay")
@@ -167,8 +174,9 @@ function correctAnimal(animalID) {
         }
         else {
             moveOn = false;
-            var text2 = document.getElementById("correct")
-            //changes the a-text to be visible, but changes to text to indicate that the user was not correct
+            var helper = sceneNum + 1;
+            var textID = "correct" + (sceneNum + 1)
+            var text2 = document.getElementById(textID)
             text2.setAttribute("visible", "true")
             text2.setAttribute("value", "You have selected the wrong animal!")
             var fail = document.getElementById("fail")
@@ -210,75 +218,94 @@ function playSound() {
         var monkey = document.getElementById(noises[3])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[4]) {
+    }
+    else if (randomAnimal == animals[4]) {
+        console.log("shouldn't be here")
         var monkey = document.getElementById(noises[4])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[5]) {
+    }
+    else if (randomAnimal == animals[5]) {
         var monkey = document.getElementById(noises[5])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[6]) {
+    }
+    else if (randomAnimal == animals[6]) {
         var monkey = document.getElementById(noises[6])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[7]) {
+    }
+    else if (randomAnimal == animals[7]) {
         var monkey = document.getElementById(noises[7])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[8]) {
+    }
+    else if (randomAnimal == animals[8]) {
         var monkey = document.getElementById(noises[8])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[9]) {
+    }
+    else if (randomAnimal == animals[9]) {
         var monkey = document.getElementById(noises[9])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[10]) {
+    }
+    else if (randomAnimal == animals[10]) {
         var monkey = document.getElementById(noises[10])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[11]) {
+    }
+    else if (randomAnimal == animals[11]) {
         var monkey = document.getElementById(noises[11])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[12]) {
+    }
+    else if (randomAnimal == animals[12]) {
         var monkey = document.getElementById(noises[12])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[13]) {
+    }
+    else if (randomAnimal == animals[13]) {
         var monkey = document.getElementById(noises[13])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[14]) {
+    }
+    else if (randomAnimal == animals[14]) {
         var monkey = document.getElementById(noises[14])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[15]) {
+    }
+    else if (randomAnimal == animals[15]) {
         var monkey = document.getElementById(noises[15])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[16]) {
+    }
+    else if (randomAnimal == animals[16]) {
         var monkey = document.getElementById(noises[16])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[17]) {
+    }
+    else if (randomAnimal == animals[17]) {
         var monkey = document.getElementById(noises[17])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[18]) {
+    }
+    else if (randomAnimal == animals[18]) {
         var monkey = document.getElementById(noises[18])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[19]) {
+    }
+    else if (randomAnimal == animals[19]) {
         var monkey = document.getElementById(noises[19])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[20]) {
+    }
+    else if (randomAnimal == animals[20]) {
         var monkey = document.getElementById(noises[20])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
-    } else if (randomAnimal == animals[21]) {
+    }
+    else if (randomAnimal == animals[21]) {
         var monkey = document.getElementById(noises[21])
         monkey.components.sound.playSound();
         console.log("should play monkey sound")
@@ -287,6 +314,7 @@ function playSound() {
 
 function changeScene(oldScene, newScene, box1, box2, box3, box4, oldSceneSound, newSceneSound, sceneSphere) {
     if (allUsed() == true) {
+        console.log("plz work")
         moveOn = true;
         if (oldScene == "rainforest-scene") {
             sceneNum = 1;
@@ -315,7 +343,7 @@ function changeScene(oldScene, newScene, box1, box2, box3, box4, oldSceneSound, 
         box2.setAttribute("position", "0 1000 0");
         box3.setAttribute("position", "0 1000 0");
         box4.setAttribute("position", "0 1000 0");
-        
+
         var sphere = document.getElementById(sceneSphere);
         sphere.setAttribute("position", "0 1000 0")
 
@@ -323,11 +351,16 @@ function changeScene(oldScene, newScene, box1, box2, box3, box4, oldSceneSound, 
         var newSceneSound = document.getElementById(newSceneSound);
         oldSceneSound.components.sound.pauseSound();
         newSceneSound.components.sound.playSound();
-        
-        var text = document.getElementById("display")
+
+        var helper = sceneNum +1;
+       var displayID = "display" + helper;
+        var text = document.getElementById(displayID)
         text.setAttribute("visible", "false")
-    } else {
-        var text = document.getElementById("display")
+    }
+    else {
+        var helper = sceneNum +1;
+       var displayID = "display" + helper;
+        var text = document.getElementById(displayID)
         text.setAttribute("visible", "true")
         text.setAttribute("value", "You have not finished this stage yet!")
     }
